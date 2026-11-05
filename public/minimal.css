@@ -1,0 +1,43 @@
+/* Opaque, quiet surfaces. Keep the established colours and page structure. */
+body{background:#f8f9f6}
+body:before{display:none}
+.v-brand .brand-mark{background:#f7364b;box-shadow:none;border-radius:5px}
+.workspace-shortcut small,.v-metric small,.metric-top,.hero-kicker{color:#75806c}
+.v-header,.top-nav,.panel,.v-metric,.vision-panel,.glass,.soft-card,.helmet-toolbar,.helmet-state,.helmet-video-panel,.workspace-shortcut,.workspace-shortcut:nth-child(even),.auth-panel,.agent-window,.account-popover,.v-dialog,.info-bar,.monitor-notice,.notice{
+  background-color:#fff!important;background-image:none!important;
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+  box-shadow:none!important;border-color:#e0e5da!important;
+}
+.v-header{border-bottom:1px solid #e4e8df}
+.top-nav{border:1px solid #e0e5da}
+.glass-hero{background:#f0f3eb;border:1px solid #e0e6d8;border-radius:8px;box-shadow:none;min-height:340px}
+.hero-copy{padding-top:32px;padding-bottom:28px}
+.hero-copy h2{font-size:54px;letter-spacing:-2px}
+.hero-copy>p{color:#727c68}
+.hero-grid,.hero-halo,.hero-orbit,.hero-float,.hero-art-caption{display:none!important}
+.hero-art{min-height:340px;transform:none!important}
+.hero-glass-shield{animation:none!important;filter:none;transform:none;width:195px;left:24%;top:48px}
+.hero-glass-shield svg{filter:none}
+.hero-glass-shield svg>path:first-of-type{fill:#fff;stroke:#d4ddca;stroke-width:2}
+.v-metric:after{display:none}
+.metric-top .app-icon,.v-metric:nth-child(even) .metric-top .app-icon,.hero-mini-avatars,.shift-entry-icon{background:#edf2e7;color:#89F336;border-color:#e0e7d8;box-shadow:none}
+.shift-entry-icon{background-image:none}
+.auth-layout{background:#f3f5ef}.auth-story{background:#edf2e7;border-color:#dce4d4;box-shadow:none}.auth-story:after{display:none}
+.agent-message.assistant{background:#f3f6ef;border-color:#e1e8da}
+.agent-window{border:1px solid #d9e2d1!important}
+.agent-bookmark{backdrop-filter:none;-webkit-backdrop-filter:none}
+.account-popover{position:fixed;inset:auto;margin:0;z-index:1000;max-height:calc(100dvh - 24px);overflow:auto;border:1px solid #cad6be!important;border-radius:7px;color:#596c4a;box-shadow:0 8px 25px #27351d12!important}
+.account-popover::backdrop{background:transparent;backdrop-filter:none}
+.account-popover h2{font-size:15px;color:#89F336}.account-popover-head button{color:#718164}
+.account-popover dl>div{margin:13px 0}.account-popover dt{color:#8b9880}
+.v-dialog::backdrop{background:#26301f55;backdrop-filter:none}
+.language-switch{display:inline-flex!important;align-items:center;justify-content:center;gap:2px;height:34px;padding:2px;border:1px solid #d2ddc9;border-radius:5px;background:#fff;flex-shrink:0;align-self:center;line-height:1;margin:0}
+.language-switch button{display:grid;place-items:center;min-width:31px;height:28px;margin:0;padding:0 6px;border:0;border-radius:3px;background:none;color:#738366;font-size:10px;font-weight:500;line-height:1;text-align:center;letter-spacing:.2px;white-space:nowrap;box-shadow:none!important;transition:background-color .12s,color .12s}
+.language-switch button:hover{background:#f1f5eb;color:#89F336}
+.language-switch button.is-active{background:#89F336;color:white}
+.language-switch button:focus-visible{outline:1px solid #89F336!important;outline-offset:1px}
+.auth-panel>.language-switch{position:absolute;right:24px;top:22px;align-self:auto}
+.connection,[data-connection]{display:none!important}
+@media(max-width:860px){.hero-copy h2{font-size:46px}.hero-glass-shield{left:14%;width:175px}.header-right{gap:10px}}
+@media(max-width:600px){.glass-hero{min-height:0}.hero-art{display:none}.hero-copy{padding:27px 24px}.hero-copy h2{font-size:48px}.hero-employee .hero-copy h2{font-size:35px}.hero-bottom{margin-bottom:0}.language-switch{height:31px;padding:2px;gap:1px}.language-switch button{height:25px;min-width:27px;padding:0 5px;font-size:9px}.v-brand strong{font-size:20px}.header-right{gap:6px}.account-popover{width:285px;max-width:calc(100vw - 24px)}.auth-panel>.language-switch{top:18px;right:20px}}
+@media(max-width:360px){.v-brand strong{font-size:18px}.v-brand .brand-mark{width:28px;height:28px}.v-header{padding:0 13px}.language-switch button{min-width:25px;padding:0 4px}.hero-copy h2{font-size:41px}.profile-button{display:flex}.profile-button>span{width:28px;height:28px}}

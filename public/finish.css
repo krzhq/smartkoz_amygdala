@@ -1,0 +1,116 @@
+/* Rounded glass surfaces, light typography and readable secondary text. */
+:root{--ink:#29332e;--muted:#59675e}
+body{font-weight:400}
+h1,h2,h3,h4,.hero-copy h2{font-weight:450!important}
+.v-brand strong{font-weight:550}
+.font-black,.font-extrabold,.font-bold{font-weight:500!important}
+.v-metric>strong{font-weight:400;letter-spacing:-1px}
+.v-btn,.btn,.hero-secondary,.history-button,.top-nav button,.workspace-shortcut span,.hero-float strong,.agent-window h2{font-weight:450}
+.hero-copy>p,.panel p,.profile-list,.agent-message,.agent-welcome p{font-weight:400}
+.panel p,.hero-copy>p,.workspace-shortcut small,.v-metric small,.hero-bottom,.event-row p,.event-row time,.agent-welcome p,.agent-window header p,.auth-card>p,.auth-note,.auth-copy>p,.auth-features,.helmet-intro p,.muted{color:#606e63!important}
+.eyebrow,.hero-kicker,.metric-top,.page-heading .eyebrow,.registry-stats,.profile-list dt,.contact-links small,.account-popover dt{color:#667367;font-weight:450}
+.profile-list dd,.event-row strong,.account-popover,.agent-message.assistant{color:#425443}
+label{color:#53634f}
+input::placeholder,textarea::placeholder{color:#74806e;opacity:1}
+.glass-hero{border-radius:38px}
+.panel,.v-metric,.vision-panel,.glass,.soft-card,.helmet-toolbar,.helmet-state,.helmet-video-panel{border-radius:30px!important}
+.workspace-shortcut{border-radius:27px}
+.top-nav{border-radius:999px}.nav-liquid-marker,.top-nav button{border-radius:999px}
+.v-btn,.btn,.hero-secondary,.history-button,.agent-suggestions button,.account-actions button{border-radius:999px!important}
+.v-btn.primary,.btn-primary{background:#f7364b!important;border:1px solid #f7364b!important;color:#fff!important;box-shadow:0 5px 16px #f7364b18}
+.v-btn.primary:hover,.btn-primary:hover{background:#df293e!important;border-color:#df293e!important}
+.hero-secondary,.history-button,.history-button.selected{background:#89F336!important;border:1px solid #89F336!important;color:#fff!important}
+.hero-secondary:hover,.history-button:hover{background:#89F336!important;border-color:#89F336!important}
+.v-btn.soft,.btn-soft{border-color:#b6c6a9;color:#89F336}
+.profile-button>span{border-radius:50%}.notification-button{border-radius:13px}
+.round-icon,.shift-entry-icon,.agent-window-mark{border-radius:14px}
+.agent-window,.v-dialog{border-radius:28px}
+.agent-bookmark{border-radius:20px 0 0 20px}
+input,select,textarea{border-radius:18px!important}
+button:focus-visible{outline:2px solid #45583a!important;outline-offset:3px}
+/* Keep the corrected account placement and fast language controls. */
+.account-popover{position:fixed;inset:auto;margin:0;z-index:1000;max-height:calc(100dvh - 24px);overflow:auto;border:1px solid #e0e7da;border-radius:26px;background:#fffefdfa;backdrop-filter:blur(18px);box-shadow:0 15px 45px #3344291c}
+.account-popover::backdrop{background:transparent}
+.account-popover h2{color:#89F336}.account-popover-head button{color:#6c7c60}
+.language-switch{display:inline-flex!important;align-items:center;justify-content:center;gap:2px;height:34px;padding:2px;border:1px solid #d2ddc9;border-radius:999px;background:#ffffffb8;flex-shrink:0;align-self:center;line-height:1;margin:0;backdrop-filter:blur(12px)}
+.language-switch button{display:grid;place-items:center;min-width:31px;height:28px;margin:0;padding:0 6px;border:0;border-radius:999px;background:none;color:#526846;font-size:10px;font-weight:450;line-height:1;text-align:center;letter-spacing:.2px;white-space:nowrap;box-shadow:none;transition:background-color .12s,color .12s}
+.language-switch button:hover{background:#edf3e7;color:#89F336}.language-switch button.is-active{background:#89F336;color:white}
+.auth-panel>.language-switch{position:absolute;right:24px;top:22px;align-self:auto}
+.connection,[data-connection]{display:none!important}
+@media(max-width:600px){.glass-hero{border-radius:30px}.panel,.v-metric,.vision-panel{border-radius:25px!important}.agent-window{border-radius:25px}.language-switch{height:31px;padding:2px;gap:1px}.language-switch button{height:25px;min-width:27px;padding:0 5px;font-size:9px;border-radius:999px}.header-right{gap:6px}.account-popover{width:285px;max-width:calc(100vw - 24px)}.auth-panel>.language-switch{top:18px;right:20px}}
+@media(max-width:360px){.v-brand strong{font-size:18px}.v-brand .brand-mark{width:28px;height:28px}.v-header{padding:0 13px}.language-switch button{min-width:25px;padding:0 4px}.profile-button{display:flex}.profile-button>span{width:28px;height:28px}}
+
+.profile-button{display:flex;align-items:center;gap:8px;padding:6px 11px 6px 6px;border:1px solid #fff;border-radius:999px;background:#ffffff75;backdrop-filter:blur(16px);color:#40543f}
+.profile-button strong{display:block!important;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;font-weight:450}
+.profile-button>span{width:29px;height:29px;flex-shrink:0}
+.profile-button:hover{background:#ffffffb8}
+.agent-message{border-radius:18px}.notice,.monitor-notice{border-radius:18px}
+.panel,.v-metric,.vision-panel,.glass,.soft-card,.helmet-toolbar,.helmet-state,.helmet-video-panel{backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px)}
+@media(max-width:600px){.profile-button{display:flex;padding:7px 10px}.profile-button>span{display:none}.profile-button strong{font-size:10px;max-width:90px}}
+@media(max-width:360px){.v-brand .brand-mark{display:none}.profile-button{padding:6px}.profile-button strong{font-size:9px;max-width:60px}}
+
+/* Bright green accent; dark lettering keeps the controls readable. */
+:root{--accent:#89F336;--accent-strong:#89F336;--citron:#89F336;--citron-ink:#252a24}
+.hero-secondary,.history-button,.history-button.selected,.hero-secondary:hover,.history-button:hover{background:#89F336!important;border-color:#89F336!important;color:#252a24!important}
+.language-switch button.is-active{background:#89F336;color:#252a24}
+.language-switch button:hover{background:#efffdf;color:#252a24}
+.v-btn.soft,.btn-soft{border-color:#89F336;color:#30362b}
+.text-button,.account-actions button{color:#30362b}
+.agent-bookmark{background:#f5ffeb;border-color:#89F336;color:#252a24}
+.agent-bookmark:hover{background:#eaffd7}
+.agent-bookmark-label,.agent-bookmark-arrow,.agent-window h2,.account-popover h2{color:#30362b}
+.hero-mini-avatars,.hero-float-bottom .hero-status-ring{background:#89F336;color:#252a24}
+.workspace-shortcut:nth-child(even) b{background:#89F336;color:#252a24}
+.v-metric:nth-child(even) .metric-top .app-icon,.shift-entry-icon{background:#ddffbf;color:#30362b}
+
+/* White page canvas; colour and glass stay inside the components. */
+html,body,.auth-layout{background:#fff!important;background-image:none!important}
+body:before{display:none}
+.task-mode-bar button,.task-filter-bar button,.employee-filter,.employee-filter.active,
+.top-nav button,.top-nav button.selected,.history-button.selected{font-weight:400!important}
+
+/* White team control and structured assistant reports. */
+.hero-actions .hero-secondary[data-page="employees"]{background:#fff!important;background-image:none!important;border-color:#d5dfce!important;color:#30362b!important;box-shadow:none}
+.hero-actions .hero-secondary[data-page="employees"]:hover{background:#fff!important;border-color:#a9bd98!important;color:#30362b!important}
+.agent-message.assistant{white-space:normal}
+.agent-message.assistant .ai-report{display:grid;gap:17px;white-space:normal}
+.agent-message.assistant .ai-section{padding:0;border:0;background:none;margin:0}
+.agent-message.assistant .ai-section h3{margin:0 0 9px;font-size:13px;line-height:1.6;font-weight:550!important;color:#34472d}
+.agent-message.assistant .ai-section p{margin:0 0 10px;font-size:12px;line-height:1.85;color:#42543b;font-weight:400}
+.agent-message.assistant .ai-section p:last-child{margin-bottom:0}
+.agent-message.assistant .ai-section ul,.agent-message.assistant .ai-section ol{padding-left:19px;margin:7px 0 12px;font-size:12px;line-height:1.85;color:#42543b}
+.agent-message.assistant .ai-section ul{list-style:disc}.agent-message.assistant .ai-section ol{list-style:decimal}
+.agent-message.assistant .ai-section li{padding-left:2px;margin:5px 0}
+.agent-message.assistant .ai-section strong{font-weight:550}
+.agent-message.assistant .ai-section em{font-style:italic}
+.agent-message.assistant .ai-section code{font-family:inherit;padding:1px 5px;background:#edf5e6;border-radius:4px;font-size:11px;overflow-wrap:anywhere}
+
+/* Black controls; lime is reserved for occasional glass gradients. */
+:root{--accent:#000;--accent-strong:#000;--accent-soft:#f2f3f0;--accent-tint:#f7f8f5;--citron-ink:#252525}
+.hero-secondary,.hero-secondary:hover,.history-button,.history-button:hover,.history-button.selected,.history-button.selected:hover,
+.v-btn.soft,.v-btn.soft:hover,.btn-soft,.btn-soft:hover,.account-actions button,.account-actions button:hover,
+.agent-suggestions button,.agent-suggestions button:hover,.agent-suggestions button:nth-child(even),.agent-suggestions button:nth-child(even):hover{
+  background:#000!important;background-image:none!important;border:1px solid #000!important;color:#fff!important;box-shadow:none!important;
+}
+.language-switch button.is-active,.language-switch button.is-active:hover{background:#000!important;color:#fff!important}
+.language-switch button:not(.is-active):hover{background:#f0f0f0;color:#222}
+.language-switch,.account-popover{border-color:#dfdfdf}
+.agent-bookmark,.agent-bookmark:hover{background:#000!important;border-color:#000!important;color:#fff!important;box-shadow:none}
+.agent-bookmark-label,.agent-bookmark-arrow{color:#fff!important}
+.workspace-shortcut:nth-child(even){background:linear-gradient(120deg,#ffffffbb,#ffffff99)}
+.workspace-shortcut:nth-child(even):before{display:none}
+.workspace-shortcut:nth-child(even):hover{border-color:#ccc;box-shadow:0 12px 25px #0000000c}
+.workspace-shortcut b,.workspace-shortcut:nth-child(even) b{background:#000;color:#fff;border-color:#000;box-shadow:none}
+.hero-mini-avatars,.v-metric:nth-child(even) .metric-top .app-icon,.shift-entry-icon{background:#f0f1ee;color:#363936;border-color:#e2e4df}
+.v-metric:nth-child(even):after{background:transparent}
+.v-metric:nth-child(2):after{background:#89F33618}
+.hero-kicker-divider{background:#a8aaa6}
+.status.good{background:#f0f2ed;color:#454c3e;border-color:#e2e6dd}
+.agent-message.assistant .ai-section code{background:#f1f2ef}
+/* Regular-weight controls and labels; emphasis stays within reports. */
+button,.task-card-head strong,.workspace-shortcut span,.profile-button strong{font-weight:400!important}
+strong,b,.font-black,.font-extrabold,.font-bold{font-weight:500!important}
+.v-metric>strong,.profile-button strong{font-weight:400!important}
+.v-brand strong{font-weight:500!important}
+.agent-message.assistant .ai-section h3,.agent-message.assistant .ai-section strong{font-weight:500!important}
+th,label{font-weight:450}

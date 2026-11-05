@@ -1,0 +1,48 @@
+﻿<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartKóz — Промышленная безопасность</title>
+    <link rel="stylesheet" href="/assets/fonts/space-grotesk.css" />
+    <link rel="stylesheet" href="/assets/fonts/montserrat.css" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#f7364b",
+              accent: "#000000",
+              surface: "#ffffff",
+              ink: "#111318",
+              muted: "#6f7683",
+              line: "#e8ebf0",
+              danger: "#d93444",
+              warn: "#c98317"
+            },
+            fontFamily: { sans: ["Space Grotesk", "Montserrat", "sans-serif"] }
+          }
+        }
+      };
+    </script>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/platform.css" />
+    <link rel="stylesheet" href="/helmet.css" />
+    <link rel="stylesheet" href="/glass.css" />
+    <link rel="stylesheet" href="/refinements.css" />
+    <link rel="stylesheet" href="/green.css" />
+    <link rel="stylesheet" href="/assistant-layout.css" />
+    <link rel="stylesheet" href="/finish.css" />
+  </head>
+  <body class="bg-[#fafafa] text-ink font-sans">
+    <div id="app" aria-live="polite"><div style="max-width:1360px;margin:90px auto;padding:24px" aria-label="Загрузка SmartKóz"><div class="skeleton"></div></div></div>
+    <script src="/i18n.js"></script>
+    <script src="/app.js"></script>
+    <script src="/helmet.js"></script>
+    <script src="/glass.js"></script>
+    <script src="/agent.js"></script>
+    <script src="/account.js"></script>
+    <script src="/platform.js"></script>
+  </body>
+</html>

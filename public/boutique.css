@@ -1,0 +1,66 @@
+/* Restrained edges and typography; the existing layout and glass remain. */
+body{font-weight:400}
+h1,h2,h3,h4{font-weight:500!important}
+.v-brand strong{font-weight:550;letter-spacing:-1px}
+.hero-copy h2{font-weight:500!important;letter-spacing:-2.6px}
+.hero-copy>p,.panel p,.profile-list,.agent-message{font-weight:400}
+.eyebrow,.hero-kicker,.metric-top,.workspace-shortcut span,.top-nav button{font-weight:500}
+.v-metric>strong{font-weight:450;letter-spacing:-1px}
+.workspace-shortcut small,.v-metric small,.hero-bottom,.agent-welcome p{font-weight:400}
+.agent-welcome h3{font-weight:450}
+.hero-float strong{font-weight:500}
+.glass-hero{border-radius:13px}
+.panel,.v-metric,.vision-panel,.glass,.soft-card,.helmet-toolbar,.helmet-state,.helmet-video-panel,.auth-story,.auth-panel{border-radius:10px!important}
+.top-nav{border-radius:8px}
+.nav-liquid-marker{border-radius:5px;background:#f7364b;box-shadow:none}
+.hero-float,.v-dialog,.account-popover,.agent-window,.monitor-notice{border-radius:9px}
+.hero-glass-shield{filter:drop-shadow(0 12px 17px #b62e4a16)}
+/* Every control has one colour system in its normal and hover states. */
+button{box-shadow:none!important;text-shadow:none!important;background-image:none!important;filter:none!important}
+.v-btn,.btn,.hero-secondary,.history-button,.agent-form button,.agent-suggestions button,.account-actions button,.agent-bookmark{
+  --button-bg:transparent;--button-ink:#89F336;--button-border:#89F336;
+  border:1px solid var(--button-border)!important;
+  border-radius:4px!important;
+  background-color:var(--button-bg)!important;
+  background-image:none!important;
+  color:var(--button-ink)!important;
+  box-shadow:none!important;
+  font-weight:500;
+  transform:none!important;
+  transition:background-color .15s,border-color .15s,color .15s;
+}
+.v-btn.primary,.btn-primary,.v-btn.danger,.btn-danger,.agent-form button{
+  --button-bg:#f7364b;--button-ink:#fff;--button-border:#f7364b;
+}
+.v-btn.primary:hover,.btn-primary:hover,.v-btn.danger:hover,.btn-danger:hover,.agent-form button:hover{
+  --button-bg:#df293e;--button-border:#df293e;
+}
+.hero-secondary,.history-button,.history-button.selected{
+  --button-bg:#89F336;--button-ink:#fff;--button-border:#89F336;
+}
+.hero-secondary:hover,.history-button:hover,.history-button.selected:hover{
+  --button-bg:#89F336;--button-border:#89F336;
+}
+.v-btn.soft,.btn-soft,.agent-suggestions button,.agent-suggestions button:nth-child(even),.account-actions button{
+  --button-bg:#ffffff9c;--button-ink:#89F336;--button-border:#a8b99b;
+}
+.v-btn.soft:hover,.btn-soft:hover,.agent-suggestions button:hover,.account-actions button:hover{
+  --button-bg:#edf2e8;--button-border:#89F336;
+}
+.agent-bookmark{--button-bg:#fafcf7;--button-ink:#89F336;--button-border:#b4c2aa;border-right:0!important;border-radius:5px 0 0 5px!important}
+.agent-bookmark:hover{--button-bg:#edf2e8;--button-border:#89F336}
+.v-btn.safety{--button-bg:#fff;--button-ink:#a82f41;--button-border:#fff}
+.v-btn.safety:hover{--button-bg:#fff1f3;--button-border:#fff1f3}
+.hero-actions .v-btn{font-weight:500}
+.hero-actions .v-btn>span,.hero-secondary>span{font-weight:400}
+.workspace-shortcut,.workspace-shortcut:nth-child(even){background:#ffffff9c!important;border:1px solid #d8ded2!important;border-radius:6px;box-shadow:none!important;transform:none!important}
+.workspace-shortcut:hover,.workspace-shortcut:nth-child(even):hover{background:#f9fbf6!important;border-color:#9fb48e!important;box-shadow:none!important;transform:none!important}
+.workspace-shortcut:before{display:none}
+.workspace-shortcut b,.workspace-shortcut:nth-child(even) b{background:none;border:0;border-radius:0;box-shadow:none;font-weight:400}
+.workspace-shortcut:nth-child(even) b{color:#89F336}
+.top-nav button{border-radius:4px;background-image:none!important;font-weight:500}
+.profile-button>span,.notification-button,.hero-mini-avatars,.round-icon,.shift-entry-icon{border-radius:5px;box-shadow:none}
+.agent-window-mark,.agent-close{border-radius:4px;box-shadow:none}
+input,select,textarea{border-radius:4px!important;box-shadow:none!important}
+button:focus-visible{outline:2px solid #31382c!important;outline-offset:3px}
+@media(max-width:600px){.hero-copy h2{letter-spacing:-2px}.glass-hero{border-radius:10px}.panel,.v-metric,.vision-panel{border-radius:7px!important}}

@@ -1,0 +1,7 @@
+# Python 3.12 x64. CPU wheels; no CUDA or separate GPU installation required.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.15.0+cpu
+torchvision==0.29.1+cpu
+ultralytics==8.4.202
+opencv-python==5.0.0.93
+numpy==2.5.4
