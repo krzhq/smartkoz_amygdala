@@ -12,7 +12,8 @@
     "test:browser": "node tests/browser.smoke.js",
     "reset:demo": "node scripts/reset-demo.js",
     "test:helmet:ai": "node tests/helmet-ai.smoke.js",
-    "test:helmet:browser": "node tests/helmet-browser.smoke.js"
+    "test:helmet:browser": "node tests/helmet-browser.smoke.js",
+    "test:helmet:layout": "node tests/helmet-layout.browser.js"
   },
   "keywords": [],
   "author": "",

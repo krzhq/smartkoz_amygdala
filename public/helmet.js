@@ -4,7 +4,7 @@ const HelmetUI=(()=>{
   const eventLabels={EYES_CLOSED_WARNING:'Глаза закрыты более 3 секунд. Возможная сонливость или ухудшение самочувствия',VISIBILITY_LOST:'Возможное снятие каски: глаза не обнаружены камерой',CAMERA_DISCONNECTED:'Соединение с камерой потеряно',AI_UNAVAILABLE:'AI-мониторинг недоступен'};
   let data={sessions:[],events:[],model:{status:'idle',model:'dreameye.pt'}},selected=null,stream=null,video=null,producer=null;
   let previewing=false,previewResult=null,deviceId='',devices=[],pumping=false,timer=null,heartbeat=null,refreshTimer=null,fetching=false,showBoxes=true,lastPacket=null,facing='user',intentional=false,disposed=false;
-  let captureGeneration=0;
+  let captureGeneration=0,renderGeneration=0;
   const key=()=>`smartkoz-helmet-${state.user?.id}`;
   const active=()=>data.sessions.find(s=>s.id===selected)||data.sessions.find(s=>!s.ended_at)||data.sessions[0];
   const own=s=>s&&s.user_id===state.user?.id;
@@ -60,12 +60,31 @@ const HelmetUI=(()=>{
   function updateRegistry(){
     document.querySelectorAll('[data-helmet-employee]').forEach(cell=>{const s=data.sessions.find(s=>s.employee_id===Number(cell.dataset.helmetEmployee));cell.innerHTML=s?`<span class="status ${s.status==='NORMAL'?'good':['EYES_CLOSED_WARNING','VISIBILITY_LOST'].includes(s.status)?'bad':''}">${safe(labels[s.ended_at?'STOPPED':s.status]||s.status)}</span><small>${s.last_analysis_at?dt(s.last_analysis_at):'Нет обработанных кадров'}</small>`:'<span class="status">Не подключена</span>';});
   }
-  function clearFrame(){const img=document.querySelector('#helmetImage');if(img){img.hidden=true;img.removeAttribute('src');}const canvas=document.querySelector('#helmetOverlay');if(canvas)canvas.getContext('2d').clearRect(0,0,canvas.width,canvas.height);const holder=document.querySelector('#helmetPlaceholder');if(holder)holder.hidden=false;const stage=document.querySelector('#helmetStage');if(stage){stage.style.aspectRatio='';stage.style.minHeight='';}lastPacket=null;}
+  function clearFrame(){
+    renderGeneration++;
+    const img=document.querySelector('#helmetImage');if(img){img.hidden=true;img.removeAttribute('src');}
+    const canvas=document.querySelector('#helmetOverlay');if(canvas)canvas.getContext('2d').clearRect(0,0,canvas.width,canvas.height);
+    const holder=document.querySelector('#helmetPlaceholder');if(holder)holder.hidden=false;
+    const stage=document.querySelector('#helmetStage');if(stage){stage.classList.remove('has-frame');stage.style.removeProperty('--helmet-frame-ratio');stage.style.aspectRatio='';stage.style.minHeight='';}
+    lastPacket=null;
+  }
   function display(packet){
-    if(state.page!=='helmet')return;lastPacket=packet;
-    const img=document.querySelector('#helmetImage');if(!img)return;
-    img.onload=()=>{img.hidden=false;document.querySelector('#helmetPlaceholder').hidden=true;const stage=document.querySelector('#helmetStage');stage.style.aspectRatio=`${packet.result.width}/${packet.result.height}`;stage.style.minHeight='0';draw(packet.result);};img.src=packet.image;
-    const lab=document.querySelector('#helmetFrameLabel');if(lab)lab.textContent=`YOLO · кадр ${packet.result.sequence} · ${packet.result.fps??'—'} Кадров в секунду`;
+    if(state.page!=='helmet')return;
+    const current=document.querySelector('#helmetImage'),width=Number(packet.result?.width),height=Number(packet.result?.height);
+    if(!current||!packet.image||!width||!height)return;
+    const generation=++renderGeneration,frame=new Image();frame.id=current.id;frame.alt=current.alt;
+    frame.onload=()=>{
+      frame.onload=null;frame.onerror=null;
+      if(generation!==renderGeneration||state.page!=='helmet'||!current.isConnected)return;
+      if(frame.naturalWidth!==width||frame.naturalHeight!==height){clearFrame();return;}
+      const stage=document.querySelector('#helmetStage');
+      stage.style.setProperty('--helmet-frame-ratio',String(width/height));stage.classList.add('has-frame');
+      document.querySelector('#helmetPlaceholder').hidden=true;
+      frame.hidden=false;current.replaceWith(frame);lastPacket=packet;draw(packet.result);
+      const label=document.querySelector('#helmetFrameLabel');if(label)label.textContent=`Изображение обновлено · ${packet.result.fps??'—'} кадров/с`;
+    };
+    frame.onerror=()=>{frame.onload=null;frame.onerror=null;if(generation===renderGeneration)clearFrame();};
+    frame.src=packet.image;
   }
   function draw(result){
     const canvas=document.querySelector('#helmetOverlay');if(!canvas)return;canvas.width=result.width;canvas.height=result.height;const ctx=canvas.getContext('2d');ctx.clearRect(0,0,canvas.width,canvas.height);if(!showBoxes)return;

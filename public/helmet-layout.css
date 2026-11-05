@@ -1,0 +1,17 @@
+/* The JPEG and its overlay share one exact viewport, without letterboxing. */
+.helmet-workspace #helmetStage{padding:0;border:0;max-width:100%;margin-inline:auto}
+.helmet-workspace #helmetStage.has-frame{
+  width:min(100%,calc(68svh * var(--helmet-frame-ratio)));
+  aspect-ratio:var(--helmet-frame-ratio);
+  height:auto;min-height:0!important;max-height:none;
+}
+.helmet-workspace #helmetStage.has-frame #helmetImage,
+.helmet-workspace #helmetStage.has-frame #helmetOverlay{
+  position:absolute;inset:0;display:block;
+  width:100%!important;height:100%!important;
+  min-width:0;min-height:0;max-width:none;max-height:none!important;
+  padding:0;margin:0;border:0;object-fit:fill;
+}
+.helmet-workspace #helmetOverlay{pointer-events:none;z-index:1}
+.helmet-workspace #helmetFrameLabel{z-index:2}
+@media(max-width:760px){.helmet-workspace #helmetStage.has-frame{width:min(100%,calc(72svh * var(--helmet-frame-ratio)))}}
