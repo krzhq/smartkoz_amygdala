@@ -29,6 +29,6 @@
     "playwright-core": "^1.60.0"
   },
   "engines": {
-    "node": ">=22 <25"
+    "node": "24.x"
   }
 }
